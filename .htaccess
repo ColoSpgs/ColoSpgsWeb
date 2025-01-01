@@ -1,0 +1,32 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Ensure DirectoryIndex is set correctly
+DirectoryIndex Index.html
+
+# Redirect www to non-www (if needed)
+RewriteCond %{HTTP_HOST} ^www\.stage\.coloradospringsmag\.com [NC]
+RewriteRule ^(.*)$ https://stage.coloradospringsmag.com/$1 [L,R=301]
+
+# Force HTTPS (if SSL is enabled)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle 404 errors gracefully
+ErrorDocument 404 /404.html
+
+# Deny access to sensitive files
+<FilesMatch "\.(env|ini|log|sh|bak|sql|swp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block Search Engine Crawlers
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|slurp|duckduckbot|baiduspider|yandex) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Prevent directory listing (security best practice)
+Options -Indexes

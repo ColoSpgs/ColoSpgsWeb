@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorado Springs Magazine</title>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="font-proxima">
+    <!-- Navigation Placeholder -->
+    <div id="navigation-container"></div>
+    <section class="bg-whiskey-300">
+      <div class="dccontainer">
+        <div
+          class="dclayout flex flex-col gap-3 pb-2 pt-7 md:flex-row md:gap-6 md:pb-6"
+        >
+          <img
+            id="issue-cover-image"
+            src="placeholder.svg"
+            alt="Magazine Issue"
+            class="size-8 object-cover md:mb-3 md:h-9 md:w-9"
+          />
+          <div>
+            <h3 class="md:mb-6" id="issue-title">Issue Name</h3>
+            <h6 id="issuedaterange">Start Date - End Date</h6>
+            <p>lorem ipsum datum.</p>
+          </div>
+        </div>
+        <div class="dclayout md:pt-1">
+          <div
+            class="grid grid-cols-2 gap-3 gap-y-5 md:grid-cols-3"
+            id="articles-wrapper"
+          >
+            <!-- template article card -->
+            <a href="#" class="transparentcard group" id="article-card">
+              <img src="placeholder.svg" class="mb-2 h-9 w-full object-cover" />
+              <h6 class="text-sm" id="article-issue-and-author">
+                Issue #. Date. Author
+              </h6>
+              <div class="mb-2 flex gap-2">
+                <span class="rounded bg-whiskey-100 px-2 py-1 text-xs"
+                  >Tag</span
+                >
+              </div>
+              <h6 class="" id="article-title">Article Title</h6>
+              <p>1 Sentence Description</p>
+              <p
+                class="border-b-2 border-white transition-all duration-200 group-hover:text-white"
+              >
+                Link to Article
+              </p></a
+            >
+          </div>
+          <div
+            class="pagination mx-auto mt-6 flex max-w-5xl justify-center gap-1 pb-7"
+          >
+            <!-- Pagination will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/issue.js"></script>
+  </body>
+</html>

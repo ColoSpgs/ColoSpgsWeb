@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorado Springs Magazine</title>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="bg-mercury-50 font-proxima">
+    <!-- Navigation Placeholder -->
+    <div id="navigation-container"></div>
+    <section class="">
+      <div class="dccontainer">
+        <div class="dclayout pb-1 pt-7 md:pb-6">
+          <h3 class="mb-6">Articles</h3>
+          <div id="filters" class="mb-1 md:mb-4"></div>
+        </div>
+        <div class="dclayout md:pt-1">
+          <div
+            class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 md:gap-y-5"
+            id="articles-wrapper"
+          >
+            <!-- template article card -->
+            <a href="#" class="transparentcard group" id="article-card">
+              <img
+                src="placeholder.svg"
+                class="mb-2 h-6 w-full object-cover md:h-9"
+              />
+              <h6 class="text-sm" id="article-issue-and-author">
+                Issue #. Date. Author
+              </h6>
+              <div class="mb-2 flex gap-2">
+                <span class="rounded bg-whiskey-100 px-2 py-1 text-xs"
+                  >Tag</span
+                >
+              </div>
+              <h6 class="" id="article-title">Article Title</h6>
+              <p>1 Sentence Description</p>
+              <p
+                class="link border-b-2 border-whiskey-400 text-mercury-950 group-hover:text-whiskey-400"
+              >
+                Link to Article
+              </p></a
+            >
+          </div>
+          <div
+            class="pagination mx-auto mt-6 flex max-w-4xl justify-center gap-1 pb-7"
+          >
+            <!-- Pagination will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/articles-filters.js"></script>
+    <script type="module" src="js/articles-pagination.js"></script>
+  </body>
+</html>

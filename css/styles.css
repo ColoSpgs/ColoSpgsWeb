@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-proxima text-base leading-relaxed text-mercury-900;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-abril text-mercury-950;
+  }
+  h1 {
+    @apply mb-3 text-4xl font-bold leading-tight md:mb-2 md:text-5xl;
+  }
+  h2 {
+    @apply mb-4 text-2xl font-extralight leading-tight md:text-3xl;
+  }
+  h3 {
+    @apply mb-3 text-3xl font-extrabold leading-tight md:mb-4 md:text-4xl md:leading-tight;
+  }
+  h4 {
+    @apply mb-2 text-xl font-normal italic leading-normal md:text-2xl;
+  }
+  h5 {
+    @apply mb-2 text-lg font-semibold leading-snug;
+  }
+  h6 {
+    @apply mb-1 font-proxima font-normal uppercase leading-snug tracking-wider md:text-base;
+  }
+  p {
+    @apply mb-3;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+@layer components {
+  .navlink {
+    @apply font-proxima text-base font-medium uppercase tracking-wider transition-all duration-200 ease-in-out hover:text-whiskey-300 md:text-sm;
+  }
+  .navlink.active {
+    @apply text-whiskey-400;
+  }
+  .button {
+    @apply mt-3 block border-b-2 border-b-whiskey-400 bg-transparent py-1 pe-2 ps-0 font-proxima font-normal transition-all duration-200 ease-in-out hover:text-whiskey-300;
+  }
+  .dccontainer {
+    @apply container mx-auto px-3 md:max-w-6xl md:px-3 lg:max-w-7xl lg:px-5 2xl:max-w-full 2xl:px-6;
+  }
+  .dclayout {
+    @apply pb-5 pt-6 md:pb-7 md:pt-7;
+  }
+  .card {
+    @apply flex flex-col items-start justify-between rounded-md bg-white px-2 pb-1 pt-2 align-middle shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1;
+  }
+  .transparentcard {
+    @apply flex flex-col items-start justify-between bg-transparent align-middle transition-all duration-300 ease-in-out;
+  }
+  .navbar {
+    @apply flex items-center justify-center space-x-4 py-2;
+  }
+  .link {
+    @apply text-whiskey-500 transition-all duration-200 ease-in-out hover:text-whiskey-300;
+  }
+  .storyselect {
+    @apply transition-all duration-200 ease-in-out hover:text-whiskey-400;
+  }
+}

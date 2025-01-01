@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorado Springs Magazine</title>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="font-proxima">
+    <!-- Navigation Placeholder -->
+    <div id="navigation-container"></div>
+    <section class="bg-whiskey-300">
+      <div class="dccontainer">
+        <div class="dclayout pb-1 pt-7 md:pb-6">
+          <h3 class="mb-6">Issues</h3>
+          <div id="filters" class="mb-2 md:mb-4"></div>
+          <!-- Filters will be dynamically inserted here -->
+        </div>
+        <div class="dclayout md:pt-1">
+          <div
+            class="grid grid-cols-2 gap-3 gap-y-5 md:grid-cols-3"
+            id="issues-wrapper"
+          >
+            <a class="transparentcard group" href="#" id="issue-card">
+              <img src="placeholder.svg" class="mb-3 h-9 w-auto object-cover" />
+              <h6 class="" id="issue-title">Issue Name</h6>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique.
+              </p>
+              <p
+                class="border-b-2 border-white transition-all duration-200 group-hover:text-white"
+              >
+                Link to Full Issue
+              </p>
+            </a>
+          </div>
+          <!-- Add a dedicated pagination container -->
+          <div
+            class="pagination mx-auto mt-6 flex max-w-4xl justify-center gap-1 pb-7"
+          >
+            <!-- Pagination will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/issues-filters.js"></script>
+    <script type="module" src="js/issues-pagination.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+  </body>
+</html>

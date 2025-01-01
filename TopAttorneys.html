@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Attorneys</title>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="font-proxima">
+    <!-- Navigation Placeholder -->
+    <div id="navigation-container"></div>
+    <section class="bg-aliceblue-100">
+      <div class="dccontainer">
+        <div
+          class="dclayout flex flex-col items-start pb-3 pt-6 text-center md:pt-7"
+        >
+          <h1>Top Attorneys</h1>
+          <!-- Filters Section -->
+          <div id="filters" class="pt-5">
+            <h6 class="text-left">Pick a Specialty</h6>
+          </div>
+        </div>
+
+        <!-- Attorney Cards Grid -->
+        <div
+          class="dclayout grid grid-cols-2 gap-2 md:grid-cols-3 md:pb-6 lg:grid-cols-5 lg:gap-y-3"
+          id="attorney-cards"
+        >
+          <!-- Attorney cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Pagination Container -->
+        <div
+          id="pagination"
+          class="pagination mx-auto flex max-w-4xl justify-center gap-1 pb-7"
+        >
+          <!-- Pagination will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/attorney-filters.js"></script>
+    <script type="module" src="js/attorney-pagination.js"></script>
+    <script type="module">
+      // Check authentication status and update nav menu
+      async function checkAuthentication() {
+        const {
+          data: { session },
+        } = await supabase.auth.getSession()
+
+        // Helper function to safely update element display
+        const setDisplayStyle = (element, displayValue) => {
+          if (element) {
+            element.style.display = displayValue
+          }
+        }
+
+        // Get nav elements
+        const dashboardLink = document.getElementById('userdashboardLink')
+        const profileLink = document.getElementById('myprofileLink')
+        const outLink = document.getElementById('signoutLink')
+        const inLink = document.getElementById('signinLink')
+
+        // Update nav based on auth status
+        if (session) {
+          setDisplayStyle(dashboardLink, 'inline')
+          setDisplayStyle(profileLink, 'inline')
+          setDisplayStyle(outLink, 'inline')
+          setDisplayStyle(inLink, 'none')
+        } else {
+          setDisplayStyle(dashboardLink, 'none')
+          setDisplayStyle(profileLink, 'none')
+          setDisplayStyle(outLink, 'none')
+          setDisplayStyle(inLink, 'inline')
+        }
+      }
+
+      // Handle sign out process
+      async function handleSignOut() {
+        try {
+          const { error } = await supabase.auth.signOut()
+          if (error) {
+            console.error('Error signing out:', error.message)
+          } else {
+            window.location.href = '/sign-in'
+          }
+        } catch (error) {
+          console.error('Error during sign out:', error.message)
+        }
+      }
+
+      // Add event listeners when the page loads
+      document.addEventListener('DOMContentLoaded', function () {
+        // Check authentication status
+        checkAuthentication()
+
+        // Add sign out handler
+        const signOutLink = document.getElementById('sign-out')
+        if (signOutLink) {
+          signOutLink.addEventListener('click', function (event) {
+            event.preventDefault()
+            handleSignOut()
+          })
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorado Springs Magazine</title>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="bg-mercury-50 font-proxima">
+    <div id="navigation-container"></div>
+    <section class="">
+      <div class="dccontainer">
+        <div class="dclayout pb-1 pt-7 md:pb-6">
+          <h3 class="mb-6">Categories</h3>
+          <!-- New category filter grid -->
+          <div
+            id="category-filters"
+            class="mb-6 grid grid-cols-2 gap-3 md:grid-cols-4"
+          >
+            <button
+              data-tags='["Profile","Game Changers"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              Profiles
+            </button>
+            <button
+              data-tags='["Health & Wellness"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              Wellness
+            </button>
+            <button
+              data-tags='["Lifestyle"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              Lifestyle
+            </button>
+            <button
+              data-tags='["Culture","Colorado Springs Art"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              Culture
+            </button>
+            <button
+              data-tags='["City"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              City
+            </button>
+            <button
+              data-tags='["Food","Breweries-Distilleries"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              Food
+            </button>
+            <button
+              data-tags='["Sports"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              Sports
+            </button>
+            <button
+              data-tags='["Business"]'
+              class="category-btn rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-whiskey-100"
+            >
+              Business
+            </button>
+          </div>
+        </div>
+        <div class="dclayout md:pt-1">
+          <div
+            class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 md:gap-y-5"
+            id="articles-wrapper"
+          >
+            <!-- Articles will be dynamically inserted here -->
+          </div>
+          <div
+            class="pagination mx-auto mt-6 flex max-w-4xl justify-center gap-1 pb-7"
+          >
+            <!-- Pagination will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <!-- Same scripts as Articles.html except for articles-filters.js -->
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/category-Pagination.js"></script>
+  </body>
+</html>

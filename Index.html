@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorado Springs Magazine</title>
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="font-proxima">
+    <!-- Navigation Placeholder -->
+    <div id="navigation-container"></div>
+    <section class="relative h-screen" id="hero">
+      <!-- Background layers -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500 ease-in-out"
+        id="bg-layer-1"
+      ></div>
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-500 ease-in-out"
+        id="bg-layer-2"
+      ></div>
+      <!-- Overlay layer -->
+      <div
+        class="absolute inset-0 z-[1] bg-gradient-to-b from-zinc-950/20 from-10% to-zinc-950/90 md:from-zinc-950/10 md:from-20% md:to-zinc-950/90"
+      ></div>
+      <!-- Feature Links  -->
+      <div class="dccontainer relative z-10 h-full">
+        <div class="dclayout flex size-full flex-col-reverse md:pb-4">
+          <div
+            class="flex w-full flex-col justify-between gap-7 object-bottom align-top md:flex-row md:gap-0 md:pb-3"
+          >
+            <div class="text-white">
+              <h3 class="-mt-1 text-2xl leading-tight text-white">
+                Story Title
+              </h3>
+              <h6 class="-mt-2 mb-3 text-sm leading-tight">Writer</h6>
+              <p class="pt-2">1 Sentence Description</p>
+            </div>
+            <div class="flex flex-col gap-y-1 text-white">
+              <h5 class="text-white">Featured Stories</h5>
+              <a href="#" class="storyselect hover:text-whiskey-400"
+                >Story A . Writer</a
+              >
+              <a href="#" class="storyselect hover:text-whiskey-400"
+                >Story A . Writer</a
+              >
+              <a href="#" class="storyselect hover:text-whiskey-400"
+                >Story A . Writer</a
+              >
+              <a href="#" class="storyselect hover:text-whiskey-400"
+                >Story A . Writer</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="dccontainer">
+        <div class="dclayout flex flex-col items-center pb-6 pt-7 text-center">
+          <h4 class="relative leading-relaxed">
+            The Leader in Stories.
+            <span id="category-links">
+              <!-- Category links will be inserted here via JavaScript -->
+            </span>
+          </h4>
+        </div>
+      </div>
+    </section>
+    <section class="bg-aliceblue-100">
+      <div class="dccontainer">
+        <div class="dclayout" id="latest-stories">
+          <div class="mb-5 w-fit">
+            <h4 class="border-b-4 border-mercury-950 pe-3 not-italic">
+              Latest Stories
+            </h4>
+          </div>
+          <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+            <a href="#" class="transparentcard group" id="latest-story-card">
+              <img
+                src="/placeholder.svg"
+                class="mb-2 h-7 w-full object-cover md:h-9"
+              />
+              <h6
+                class="text-sm text-mercury-600"
+                id="latest-story-issue-and-author"
+              >
+                Issue #. Date. Author
+              </h6>
+              <h6 id="latest-story-title">Article Title</h6>
+              <p id="latest-story-description" class="text-mercury-600">
+                1 Sentence Description
+              </p>
+              <p
+                class="link border-b-2 border-whiskey-400 text-mercury-950 group-hover:text-whiskey-400"
+              >
+                Read Article
+              </p></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-mercury-50">
+      <div class="dccontainer">
+        <div
+          class="dclayout flex flex-col items-center text-center"
+          id="faces-of-colorado-springs"
+        >
+          <h3>Faces of Colorado Springs</h3>
+          <p class="max-w-prose">
+            Movers, shakers, captains of industry. See their stories,
+            influences, and what they're working on next to make our beloved
+            Colorado Springs the best in America.
+          </p>
+          <img src="img/placeholder.png" class="mb-5 mt-5 h-auto w-9" />
+          <a
+            href="#"
+            class="link border-b-2 border-whiskey-400 text-mercury-950"
+            >Check it Out</a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="bg-aliceblue-100">
+      <div class="dccontainer">
+        <div class="dclayout pb-3" id="best-of-the-springs-filters">
+          <div class="flex flex-row place-items-start justify-between">
+            <h3 class="w-11">Best of the Springs</h3>
+            <div class="flex flex-col text-right">
+              <p>Find the top and best of...</p>
+              <a href="#" class="link" id="best-of-the-springs-doctors"
+                ><h5 class="text-mercury-950 hover:text-whiskey-400">
+                  Doctors
+                </h5></a
+              >
+              <a href="#" class="link" id="best-of-the-springs-dentists"
+                ><h5 class="text-mercury-950 hover:text-whiskey-400">
+                  Dentists
+                </h5></a
+              >
+              <a href="#" class="link" id="best-of-the-springs-lawyers"
+                ><h5 class="text-mercury-950 hover:text-whiskey-400">
+                  Lawyers
+                </h5></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dccontainer">
+        <div
+          class="dclayout grid grid-cols-2 gap-2 md:grid-cols-4 lg:grid-cols-5"
+          id="best-of-the-springs-cards"
+        >
+          <a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p> </a
+          ><a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p> </a
+          ><a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p> </a
+          ><a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p> </a
+          ><a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p> </a
+          ><a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p>
+          </a>
+          <a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p> </a
+          ><a href="#" class="card" id="best-of-the-springs-card">
+            <img src="/img/placeholder.png" class="mb-2" />
+            <h6 class="text-sm" id="profile-specialty">Specialty</h6>
+            <p id="profile-name">Name</p>
+            <p class="button mb-1 duration-0">See Profile</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="bg-whiskey-300">
+      <div class="dccontainer">
+        <div class="dclayout" id="past-issues">
+          <div class="mb-5 w-fit">
+            <h4 class="border-b-4 border-mercury-950 pe-3">Past Issues</h4>
+          </div>
+          <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+            <!-- Recent issues will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/heroInteraction.js"></script>
+    <script type="module" src="/js/latestStories.js"></script>
+    <script type="module" src="js/best-of-springs.js"></script>
+    <script type="module" src="/js/recentIssues.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="/js/categoryShowcase.js"></script>
+  </body>
+</html>

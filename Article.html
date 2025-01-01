@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="font-proxima">
+    <!-- Navigation Placeholder -->
+    <div id="navigation-container"></div>
+    <section class="mt-7 bg-white md:mt-5 md:h-screen">
+      <div class="flex flex-col-reverse md:grid md:grid-cols-2">
+        <img
+          class="h-9 w-full object-cover md:h-screen"
+          src="placeholder.svg"
+          id="article-coverimage"
+        />
+        <div class="px-3 md:p-5 md:px-0 md:ps-5">
+          <h1 class="md:sticky md:top-6 md:text-5xl" id="article-title">
+            Article Title
+          </h1>
+        </div>
+      </div>
+    </section>
+    <section class="bg-mercury-100">
+      <div class="dccontainer">
+        <div class="dclayout pt-5">
+          <div
+            class="grid grid-cols-2 justify-between gap-y-3 md:flex md:flex-row md:gap-y-0"
+          >
+            <div class="flex flex-col">
+              <h6>Author</h6>
+              <a href="#" id="author-link">Lorem ipsum</a>
+            </div>
+            <div class="flex flex-col">
+              <h6>Photography</h6>
+              <a href="#" id="photography-link">Lorem ipsum</a>
+            </div>
+            <div class="flex flex-col">
+              <h6>Date</h6>
+              <a href="#" id="date">Lorem ipsum</a>
+            </div>
+            <div class="flex flex-col">
+              <h6>Issue</h6>
+              <a href="#" id="issue-link">Lorem ipsum</a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <div
+              class="mt-6 grid grid-cols-2 justify-center gap-3 md:sticky md:top-7 md:grid md:h-fit md:grid-cols-2"
+              id="article-gallery"
+            >
+              <img
+                src="placeholder.svg"
+                class="w-max cursor-pointer object-cover transition-opacity hover:opacity-80 md:h-8 md:w-8"
+              />
+              <img
+                src="placeholder.svg"
+                class="w-max cursor-pointer object-cover transition-opacity hover:opacity-80 md:h-8 md:w-8"
+              />
+              <img
+                src="placeholder.svg"
+                class="w-max cursor-pointer object-cover transition-opacity hover:opacity-80 md:h-8 md:w-8"
+              />
+            </div>
+            <div class="flex flex-col items-center md:mt-6">
+              <p class="prose prose-base max-w-prose" id="article-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+                commodo diam libero vitae erat. Aenean faucibus nibh et justo
+                cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+                tristique posuere. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Suspendisse varius enim in eros elementum
+                tristique. Duis cursus, mi quis viverra ornare, eros dolor
+                interdum nulla, ut commodo diam libero vitae erat. Aenean
+                faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut
+                sem vitae risus tristique posuere.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      id="image-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75 opacity-0 transition-opacity duration-300 ease-in-out"
+    >
+      <div
+        class="relative mx-auto scale-95 transform p-4 transition-transform duration-300 ease-in-out"
+      >
+        <img id="modal-image" src="" alt="" class="h-9 w-auto md:h-10" />
+        <button
+          id="close-modal"
+          class="absolute -right-2 -top-2 text-2xl text-white hover:text-gray-300"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/article.js"></script>
+    <script type="module" src="js/article-modal.js"></script>
+  </body>
+</html>

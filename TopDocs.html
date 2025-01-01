@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Doctors</title>
+    <link rel="stylesheet" href="https://use.typekit.net/alt8upe.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- AlpineJS (for mobile menu) -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Navigation Initializer -->
+    <script type="module" src="/js/initNavigation.js"></script>
+  </head>
+  <body class="font-proxima">
+    <!-- Navigation Placeholder -->
+    <div id="navigation-container"></div>
+    <section class="bg-aliceblue-100">
+      <div class="dccontainer">
+        <div
+          class="dclayout flex flex-col items-start pb-3 pt-6 text-center md:pt-7"
+        >
+          <h1>Top Doctors</h1>
+          <div class="pt-5" id="filters">
+            <h6 class="text-left">Pick a Specialty</h6>
+          </div>
+        </div>
+
+        <!-- Doctor Cards Grid -->
+        <div
+          id="doctor-cards"
+          class="dclayout grid grid-cols-2 gap-2 md:grid-cols-3 md:pb-6 lg:grid-cols-5 lg:gap-y-3"
+        >
+          <!-- Doctor cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Pagination Container -->
+        <div
+          id="pagination"
+          class="pagination mx-auto flex max-w-4xl justify-center gap-1 pb-7"
+        >
+          <!-- Pagination will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+    <div id="cta-bar-container"></div>
+    <div id="footer-container"></div>
+    <script type="module" src="/js/initCtaBar.js"></script>
+    <script type="module" src="/js/initFooter.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/doctors-filters.js"></script>
+    <script type="module" src="js/doctors-pagination.js"></script>
+  </body>
+</html>

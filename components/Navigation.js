@@ -44,7 +44,7 @@ export class NavigationComponent {
                 <!-- Best of Springs Dropdown -->
                 <div class="group relative -mt-1 inline-block">
                   <button class="navlink inline-flex items-center">
-                    <span class="">Find It</span>
+                    <span class="">Find It Today</span>
                     <svg
                       class="ml-1 h-2 w-2 transform transition-transform duration-300 group-hover:rotate-180"
                       fill="currentColor"
